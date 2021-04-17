@@ -1,18 +1,30 @@
 body{
     background-color: #93C9EF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     color: black;
     font-size: 60px;
+    border: solid 15px;
 }
 p{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     text-align: center;
 }
-p2{
+.autor{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
-    font-style: italic;                
+    font-style: italic;    
+    text-align:left ;            
+}
+.urls{
+    font-size: 30px;
+
+}
+.prof{
+    width: 20%;
+    height:20%;
+    margin-left: 250px;
 }
