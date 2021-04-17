@@ -1,6 +1,8 @@
 body{
     background-color: #93C9EF;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'CaveatBold';
+    font-weight:normal;
+    font-style:normal
 }
 h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
@@ -9,13 +11,12 @@ h1{
     border: solid 15px;
 }
 p{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     text-align: center;
 }
 .autor{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
+    font-family: 'CaveatBold';
+    font-size: 17px;
     font-style: italic;    
     text-align:left ;            
 }
@@ -28,3 +29,48 @@ p{
     height:20%;
     margin-left: 250px;
 }
+
+  @font-face {
+    font-family: 'CaveatRegular';
+      src: url('Fonts/Caveat-Regular.eot'); /* IE9 Compat Modes */
+      src: url('Fonts/Caveat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('Fonts/Caveat-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+          url('Fonts/Caveat-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+          url('Fonts/Caveat-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+          url('Fonts/Caveat-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+      font-weight: 400;
+      font-style: normal;
+  }
+  @font-face {
+    font-family: 'CaveatSemiBold';
+      src: url('Fonts/Caveat-SemiBold.eot'); /* IE9 Compat Modes */
+      src: url('Fonts/Caveat-SemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('Fonts/Caveat-SemiBold.woff2') format('woff2'), /* Super Modern Browsers */
+          url('Fonts/Caveat-SemiBold.woff') format('woff'), /* Pretty Modern Browsers */
+          url('Fonts/Caveat-SemiBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+          url('Fonts/Caveat-SemiBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+      font-weight: 400;
+      font-style: normal;
+  }
+  @font-face {
+    font-family: 'CaveatMedium';
+      src: url('Fonts/Caveat-Medium.eot'); /* IE9 Compat Modes */
+      src: url('Fonts/Caveat-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('Fonts/Caveat-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+          url('Fonts/Caveat-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+          url('Fonts/Caveat-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+          url('Fonts/Caveat-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+      font-weight: 400;
+      font-style: italic;
+  }
+  @font-face {
+    font-family: 'CaveatBold';
+      src: url('Fonts/Caveat-Bold.eot'); /* IE9 Compat Modes */
+      src: url('Fonts/Caveat-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('Fonts/Caveat-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+          url('Fonts/Caveat-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+          url('Fonts/Caveat-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+          url('Fonts/Caveat-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+      font-weight: 400;
+      font-style: normal;
+  }
