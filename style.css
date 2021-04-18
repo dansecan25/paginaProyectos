@@ -1,5 +1,10 @@
-body{
+.cuerpo{
     background-color: #93C9EF;
+    /*
+    background-image: url();
+    background-repeat:no-repeat;
+    background-size: cover;
+    */
     font-family: 'CaveatBold';
     font-weight:normal;
     font-style:normal
@@ -10,6 +15,9 @@ h1{
     font-size: 60px;
     border: solid 15px;
 }
+#titulo{
+    margin-bottom: 5px;
+}
 p{
     font-size: 30px;
     text-align: center;
@@ -19,20 +27,25 @@ p{
     font-size: 17px;
     font-style: italic;    
     text-align:left ;
-    margin: 0 10px 0 0;            
+    margin-bottom: 5px;          
 }
 #mover:hover{
     color:rgb(255, 255, 255);
 }
+.noLine{
+    text-decoration: none;
+}
 .urls{
     font-size: 30px;
-
 }
-.prof{
+.imagenPerfil{
     width: 20%;
     height:20%;
-    margin-left: 250px;
+    margin: 2px 5px 2px 5px;
     border-radius: 55px 55px 55px 55px;
+}
+.descripcion{
+    float: right;
 }
 
   @font-face {
