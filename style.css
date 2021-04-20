@@ -1,22 +1,57 @@
+header{
+    background-image: url(Fondo.png);
+    background-color: #2d87e4;
+    background-repeat: repeat;
+    background-size:auto;
+    display: block;
+    margin:0 auto;
+    padding: 0;
+}
+.listaCabecera{
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+}
+.listaDentro{
+    float:left;
+    padding: 0;
+    margin-right: 30px;
+}
+header::after{
+    content: '';
+    display: table;
+    clear:both;
+}
+/*
+header{
+    
+}
+
+*/
 .cuerpo{
-    background-color: #93C9EF;
-    /*
-    background-image: url();
-    background-repeat:no-repeat;
-    background-size: cover;
-    */
+    background-color: #e1d7bc;
     font-family: 'CaveatBold';
     font-weight:normal;
-    font-style:normal
+    font-style:normal;
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+.imagenPerfil{
+    width: 150px;
+    height:150px;
+    margin: 15px 20px 2px 2px;
+    border-radius: 150px 150px 150px 150px;
 }
 h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     color: black;
-    font-size: 60px;
-    border: solid 15px;
+    font-size: 200%;
 }
 #titulo{
-    margin-bottom: 5px;
+    margin: 0;
+    margin-top: 15px;
+    font-size: 40px;
 }
 p{
     font-size: 30px;
@@ -24,25 +59,21 @@ p{
 }
 .autor{
     font-family: 'CaveatBold';
-    font-size: 17px;
+    font-size: 20px;
     font-style: italic;    
     text-align:left ;
-    margin-bottom: 5px;          
+    margin-left: 20px;
+    margin-top: 1px;
+    margin-bottom: 20px;          
 }
 #mover:hover{
-    color:rgb(255, 255, 255);
+    color:rgb(8, 68, 18);
 }
 .noLine{
     text-decoration: none;
 }
 .urls{
     font-size: 30px;
-}
-.imagenPerfil{
-    width: 20%;
-    height:20%;
-    margin: 2px 5px 2px 5px;
-    border-radius: 55px 55px 55px 55px;
 }
 .descripcion{
     float: right;
