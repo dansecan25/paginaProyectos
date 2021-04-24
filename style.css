@@ -7,6 +7,9 @@ header{
     margin:0 auto;
     padding: 0;
 }
+ul {
+    margin: 0;
+}
 .listaCabecera{
     list-style: none;
     margin: 0;
@@ -22,12 +25,6 @@ header::after{
     display: table;
     clear:both;
 }
-/*
-header{
-    
-}
-
-*/
 .cuerpo{
     background-color: #e1d7bc;
     font-family: 'CaveatBold';
