@@ -69,12 +69,15 @@ header::after{
 
 .cuerpo{
     background-color: #1e1e1e;
-    font-family: 'sans-serif';
+    font-family: Consolas,'Courier New',monospace;
     font-weight:normal;
     font-style:normal;
     margin:0;
     padding: 0;
     border: 0;
+}
+body ul{
+    color: #79a7e2;
 }
 .imagenPerfil{
     width: 150px;
@@ -94,8 +97,18 @@ p{
     font-size: 20px;
     text-align: left;
     margin-left:30px;
-    color:#3c3c3c;
+    color:#79a7e2;
 }
+.inside {
+    display: inline-block;
+    margin-left:40px
+}
+.sinPunto{
+    list-style: none;
+}
+
+
+
 .autor{
     font-family: 'CaveatBold';
     font-size: 20px;
@@ -110,9 +123,6 @@ p{
 }
 .noLine{
     text-decoration: none;
-}
-.urls{
-    font-size: 30px;
 }
 .descripcion{
     float: right;
