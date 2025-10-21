@@ -61,4 +61,8 @@ body {
 section{
   margin-left: 40px;
 }
+h1{
+  font-weight: normal;
+  font-family: raleway, sans-serif;
+}
 
