@@ -2,6 +2,15 @@
 import MobilePhoneIcon from '../assets/icons/mobile-svgrepo.svg';
 import BrowserIcon from '../assets/icons/browser-svgrepo.svg';
 import MainframeIcon from '../assets/icons/mainframe-svgrepo.svg';
+import { useRouter } from 'vue-router';
+
+  // Initialize the router instance
+  const router = useRouter();
+
+  // 2. Define the navigation function
+  const navigateToContact = () => {
+    router.push('/contact');
+  };
 </script>
 
 <template>
@@ -18,12 +27,12 @@ import MainframeIcon from '../assets/icons/mainframe-svgrepo.svg';
         My main interests are in the fields of computer architecture and quantum computer architectures!<br />
         Skilled in adapting to new technologies fast and efficiently.
       </p>
-      <button class="contact-button">Contact</button>
+      <button class="contact-button" @click="navigateToContact">Contact</button>
     </section>
 
     <section>
       <h2 class="abilities">
-        I’m capable of building websites, mobile apps for Android and IOS, mainframe batch jobs, and more!
+        I’m capable of building websites, mobile apps for Android and iOS, mainframe batch jobs, and more!
       </h2>
       <p class="skills-paragraph">
         I offer fast learning skills for new technologies, development in most environments, understanding of frameworks such as Flutter, React, Angular, Vue, React Native, and more to come!

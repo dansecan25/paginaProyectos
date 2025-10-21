@@ -1,21 +1,15 @@
 <template>
-  <section>
-    <h2 >PROJECTS</h2>
-    <p>
-      Some individual open source projects I have developed to showcase my knowledge in different technologies and areas.
-    </p>
-
-    <div>
-      <ProjectCard framework="Flutter" title="Music Player" language="Dart" badgeColor="bg-blue-500" />
-      <ProjectCard framework="Vue" title="Portfolio Webpage" language="Typescript" badgeColor="bg-green-600" />
-      <ProjectCard framework="React Native" title="Personal Trainer" language="Javascript" badgeColor="bg-sky-400" />
-      <ProjectCard framework="Tauri" title="Grocery History" language="Rust" badgeColor="bg-orange-500" />
-      <ProjectCard framework="Qiskit" title="To do" language="Python" badgeColor="bg-purple-600" />
-      <ProjectCard framework="Circuits" title="Door Password" language="Logic Gates" badgeColor="bg-lime-500" />
+  <section class="relative px-8 py-16 text-center">
+    <div class="tempCover">
+      <h1>This page is still under construction</h1>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-  import ProjectCard from "../components/ProjectCard.vue";
-</script>
+<style scoped>
+.tempCover {
+  margin-top:100px;
+  height: 100vh;
+  width: 100%;
+}
+</style>
