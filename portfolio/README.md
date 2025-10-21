@@ -43,3 +43,10 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+### To update the webpage
+Push the changes
+Then run 
+```sh
+npm run deploy
+```
