@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as c,a as s}from"./index-DJhDio3n.js";const n={},r={class:"relative px-8 py-16 text-center"};function a(i,e){return c(),o("section",r,[...e[0]||(e[0]=[s("div",{class:"tempCover"},[s("h1",null,"This page is still under construction")],-1)])])}const _=t(n,[["render",a],["__scopeId","data-v-432e8bb1"]]);export{_ as default};
