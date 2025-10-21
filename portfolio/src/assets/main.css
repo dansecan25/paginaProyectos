@@ -65,4 +65,8 @@ h1{
   font-weight: normal;
   font-family: raleway, sans-serif;
 }
+p{
+  font-family: raleway, sans-serif;
+  line-height: 25px;
+}
 
