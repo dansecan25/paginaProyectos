@@ -1,27 +1,27 @@
 <template>
-  <section class="testing-class">
-    <p class="title-container">Project portfolio</p>
-    <h1>
+  <section class="relative px-8 py-16 text-center">
+    <p class="text-sm bg-neutral-700 px-3 py-1 rounded inline-block">Project portfolio</p>
+    <h1 class="text-4xl font-bold mt-4">
       My name is Daniel,<br />
       Happy to learn and build always!
     </h1>
-    <p>
+    <p class="mt-4 text-gray-300 max-w-xl mx-auto">
       I'm a computer engineer who loves programming and learning new technologies.
       My main interests are in the fields of computer architecture and quantum computer architectures!
       Skilled in adapting to new technologies fast and efficiently.
     </p>
-    <button>Contact</button>
+    <button class="mt-6 px-4 py-2 bg-white text-black rounded">Contact</button>
   </section>
 
-  <section>
-    <h2 >
+  <section class="px-8 py-16 bg-black text-center">
+    <h2 class="text-2xl font-bold">
       I’m capable of building websites, mobile apps for Android and IOS, mainframe batch jobs, and more!
     </h2>
-    <p >
+    <p class="mt-4 text-gray-300 max-w-3xl mx-auto">
       I'm offer fast learning skills for new technologies, development in most environments, understanding of frameworks such as Flutter, React, Angular, Vue, React Native, and more to come!
     </p>
 
-    <div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
       <div>
         <h3 class="text-xl font-bold">Web pages</h3>
         <p class="text-gray-400">I develop web pages in frameworks like React, Vue and Angular.</p>
@@ -31,23 +31,9 @@
         <p class="text-gray-400">I have developed mobile apps with Flutter, React Native and learning Tauri.</p>
       </div>
       <div>
-        <h3 >Mainframe</h3>
-        <p >I have used TSO commands on z/OS ISPF, as well as coded in assembler and COBOL.</p>
+        <h3 class="text-xl font-bold">Mainframe</h3>
+        <p class="text-gray-400">I have used TSO commands on z/OS ISPF, as well as coded in assembler and COBOL.</p>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-  /* Estilos específicos para HomeView.vue */
-  .title-container {
-    display:flex;
-   padding:2px 20px;
-   margin: 84px 10px 44px 0px;
-   width: fit-content;
-   border-radius: 4px;
-   background-color: #423F43;
-  }  
-  
-  
-</style>

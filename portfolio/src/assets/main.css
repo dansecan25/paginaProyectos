@@ -1,35 +1,64 @@
-@import './base.css';
+/* src/assets/main.css */
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+/* Simple global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a,
-.green {
+/* Navbar base */
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;       /* centra verticalmente avatar + links */
+  justify-content: space-between;
+  margin: top 0;
+  padding: 12px 41px;
+  gap: 16px;
+  background: #1F1F1F;   /* cambia si quieres color */
+}
+
+/* Avatar circular */
+.profile-avatar {
+  width: 48px;               /* tamaño del círculo, cambia si quieres */
+  height: 48px;
+  border-radius: 50%;        /* esto es lo que la hace circular */
+  object-fit: cover;         /* recorta la imagen para llenar el círculo */
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+/* Contenedor de los links a la derecha */
+.nav-links {
+  display: flex;
+  align-items: center;       /* mantiene todo centrado verticalmente */
+  gap: 18px;
+  font-weight: 600;
+}
+
+/* Estilo de los enlaces */
+.nav-links a {
+  color: #e6e6e6;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.04);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #000000, #003300);
+  color: white;
+  justify-content: left;
+  align-items: left;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+section{
+  margin-left: 40px;
 }
+
