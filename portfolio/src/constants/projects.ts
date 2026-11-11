@@ -151,7 +151,26 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
-    media: [],
+    media: [
+      {
+        type: 'image',
+        file: 'main-view.png',
+        alt: 'TerminalOmega with an SSH session on the left, btop for that server on the top right, and a local terminal below',
+        caption: 'SSH session, live btop for the selected server, and a local terminal side by side',
+      },
+      {
+        type: 'image',
+        file: 'ssh-sessions.png',
+        alt: 'The SSH Sessions dialog with a saved session and the form to add a new one',
+        caption: 'Saved SSH sessions, with an optional password stored in the system keychain',
+      },
+      {
+        type: 'image',
+        file: 'settings.png',
+        alt: 'The Settings dialog with theme, colors, font, background image and automatic update options',
+        caption: 'Themes, fonts, background image and automatic updates',
+      },
+    ],
     repoUrl: 'https://github.com/dansecan25/TerminalOmega',
   },
   {
