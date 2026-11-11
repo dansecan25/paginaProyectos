@@ -2,6 +2,7 @@
 import MobilePhoneIcon from '../assets/icons/mobile-svgrepo.svg';
 import BrowserIcon from '../assets/icons/browser-svgrepo.svg';
 import MainframeIcon from '../assets/icons/mainframe-svgrepo.svg';
+import ProjectsGrid from '@/components/ProjectsGrid.vue';
 import { useRouter } from 'vue-router';
 
   // Initialize the router instance
@@ -61,6 +62,15 @@ import { useRouter } from 'vue-router';
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="projects-section" aria-labelledby="home-projects-title">
+      <h2 id="home-projects-title" class="projects-title">PROJECTS</h2>
+      <p class="projects-subtitle">
+        Some individual projects I have developed to showcase my knowledge in different
+        technologies and areas.
+      </p>
+      <ProjectsGrid />
     </section>
   </div>
 </template>
@@ -149,6 +159,24 @@ import { useRouter } from 'vue-router';
   margin-left: 1rem; /* Space between icon and text */
 }
 
+.projects-section {
+  margin-bottom: 160px;
+}
+
+.projects-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.projects-subtitle {
+  width: 45%;
+  min-width: 280px;
+  margin-bottom: 56px;
+}
+
 .icon-styles {
   /* 💡 FIX 4: Use a smaller, consistent size for the SVG */
   width: 2rem; 
@@ -186,9 +214,24 @@ import { useRouter } from 'vue-router';
     margin-bottom: 80px;
   }
 
+  .projects-section {
+    margin-bottom: 80px;
+  }
+
+  .projects-title {
+    font-size: 2rem;
+  }
+
+  .projects-subtitle {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 32px;
+  }
+
   .skills-show-boxes {
     flex-direction: column; /* Force stack for clear presentation */
     gap: 1.5rem;
+    margin-bottom: 100px;
   }
 
   .skills-box {

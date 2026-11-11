@@ -50,3 +50,34 @@ Then run
 ```sh
 npm run deploy
 ```
+
+## Project screenshots and videos
+
+Projects are defined in `src/constants/projects.ts`. Each one has a media folder:
+
+```
+public/images/projects/<slug>/
+```
+
+| Project | Folder |
+|---|---|
+| ChatAppFriends | `chat-app-friends` |
+| Family Chat Secure | `family-chat-secure` |
+| TerminalOmega | `terminal-omega` |
+| Expense Planner | `expense-planner` |
+| Music Player | `music-player` |
+| Home Server | `home-server` |
+
+Drop the file in the folder, then list it in that project's `media` array:
+
+```ts
+media: [
+  { type: 'image', file: 'home.png', alt: 'Home screen with mock data', caption: 'Home' },
+  { type: 'video', file: 'call-demo.mp4', poster: 'call-demo.png', alt: 'Voice call demo' },
+],
+```
+
+- Images: `.png`, `.jpg` or `.webp`. Videos: `.mp4` (H.264/AAC) or `.webm`, which play in every modern browser.
+- A `poster` image is optional, but it shows on the video and as its thumbnail before it loads.
+- GitHub rejects files over 100 MB, so keep videos short and compressed.
+- Use mock data only, and check that screenshots don't show hostnames, IPs, codes or keys.

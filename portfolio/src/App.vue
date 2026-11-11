@@ -176,14 +176,27 @@ const binaryString = ref(`
 }
 
 /* --- Content Wrapper --- */
+/* Flex column at least one screen tall, so the footer stays at the bottom on short pages. */
 .app-layout {
   position: relative;
-  z-index: 10; 
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .view-content-wrapper {
+  flex: 1 0 auto;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 40px; 
+  padding: 20px 40px;
+}
+
+@media (max-width: 768px) {
+  .view-content-wrapper {
+    padding: 16px;
+  }
 }
 </style>

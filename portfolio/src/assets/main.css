@@ -1,5 +1,23 @@
 /* src/assets/main.css */
 
+/* Design tokens (from the Figma mockup) */
+:root {
+  --color-bg: #000000;
+  --color-surface: #1f1f1f;
+  --color-surface-raised: #2b2b2b;
+  --color-card: #4b4b4b;
+  --color-card-hover: #575757;
+  --color-chip: #423f43;
+  --color-text: #ffffff;
+  --color-text-muted: #c0c0c0;
+  --color-text-subtle: #888888;
+  --color-accent: #33ff00;
+  --color-accent-soft: rgba(51, 255, 0, 0.35);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --font-heading: raleway, sans-serif;
+}
+
 /* Simple global reset */
 * {
   margin: 0;
@@ -68,5 +86,11 @@ h1{
 p{
   font-family: raleway, sans-serif;
   line-height: 25px;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin-left: 0;
+  }
 }
 
