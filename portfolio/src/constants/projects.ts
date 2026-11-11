@@ -188,8 +188,9 @@ export const PROJECTS: Project[] = [
       'Savings groups, with tracking of how saved money was spent',
       'Optional “inflated” amounts that plan with a safety margin',
       'Works fully offline, with JSON backup and restore',
+      'Updates itself from GitHub Releases',
     ],
-    stack: ['React Native', 'MobX-State-Tree', 'React Navigation', 'SQLite (Nitro)', 'Jest'],
+    stack: ['React Native', 'MobX-State-Tree', 'React Navigation', 'SQLite (Nitro)', 'Kotlin', 'Jest', 'GitHub Actions'],
     sections: [
       {
         title: 'Planning engine',
@@ -214,8 +215,79 @@ export const PROJECTS: Project[] = [
           'Light, dark or system appearance, and translations through an i18n layer.',
         ],
       },
+      {
+        title: 'Releases and self-update',
+        points: [
+          'Pushing a version tag starts a GitHub Actions workflow that checks the tag matches the app version, builds a signed APK and attaches it to a draft release.',
+          'The signing key only exists as repository secrets and is written to a temporary file during the build, so every release can install over the previous one.',
+          'The app checks the latest published release at startup and when it returns to the foreground, and offers the update in a banner and in Settings.',
+          'Downloads are checked against the size and SHA-256 digest reported by GitHub, then a small Kotlin module hands the APK to Android’s installer.',
+          'The user’s data stays in place across updates.',
+        ],
+      },
     ],
-    media: [],
+    media: [
+      {
+        type: 'image',
+        file: 'home.webp',
+        alt: 'Home with the money available before the next payment, today’s movements and this month’s movements',
+        caption: 'Home: money available before the next payday',
+      },
+      {
+        type: 'image',
+        file: 'balance.webp',
+        alt: 'Balance screen with the total available now, account balances and a movement dashboard',
+        caption: 'Balances now and projected by account',
+      },
+      {
+        type: 'image',
+        file: 'record-deduction.webp',
+        alt: 'Form to record a deduction, savings contribution or income, with optional repeat and inflated amount',
+        caption: 'Recording a movement',
+      },
+      {
+        type: 'image',
+        file: 'expenses-by-groups.webp',
+        alt: 'Spending totals grouped by tag, such as dining, entertainment and groceries',
+        caption: 'Spending grouped by tag',
+      },
+      {
+        type: 'image',
+        file: 'subscriptions.webp',
+        alt: 'List of subscriptions with their amount, frequency, account and tag',
+        caption: 'Subscriptions included in the projections',
+      },
+      {
+        type: 'image',
+        file: 'savings.webp',
+        alt: 'Savings available today, recurring savings goals and savings groups',
+        caption: 'Savings goals and groups',
+      },
+      {
+        type: 'image',
+        file: 'accounts.webp',
+        alt: 'Accounts screen with cash, a credit card with its cut-off and payment dates, and a bank account',
+        caption: 'Bank, cash and credit card accounts',
+      },
+      {
+        type: 'image',
+        file: 'setup.webp',
+        alt: 'First-launch setup asking for language, starting balance, income type and pay schedule',
+        caption: 'First-launch setup',
+      },
+      {
+        type: 'image',
+        file: 'deductions.webp',
+        alt: 'Costa Rica income-tax brackets and CCSS deduction settings',
+        caption: 'Income-tax and social security deductions',
+      },
+      {
+        type: 'image',
+        file: 'settings.webp',
+        alt: 'Settings with appearance, language and income schedule options',
+        caption: 'Settings',
+      },
+    ],
   },
   {
     slug: 'music-player',
