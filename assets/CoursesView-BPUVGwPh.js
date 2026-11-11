@@ -1,1 +1,0 @@
-import{c as e,i as t,o as n,t as r}from"./index-CPiwtzen.js";var i={},a={class:`relative px-8 py-16 text-center`};function o(r,i){return e(),n(`section`,a,[...i[0]||=[t(`div`,{class:`tempCover`},[t(`h1`,null,`This page is still under construction`)],-1)]])}var s=r(i,[[`render`,o],[`__scopeId`,`data-v-c64d8407`]]);export{s as default};
