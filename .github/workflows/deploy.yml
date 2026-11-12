@@ -56,9 +56,11 @@ jobs:
         run: npm run build-only
 
       - name: Publish to gh-pages
+        # gh-pages can't parse "[bot]" in its -u option, so the author comes from git config.
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           npx gh-pages -d dist -m "Deploy ${GITHUB_SHA::7}" \
-            -u "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" \
             -r "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
         env:
           GITHUB_TOKEN: ${{ github.token }}
