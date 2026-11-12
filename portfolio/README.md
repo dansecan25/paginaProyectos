@@ -46,7 +46,7 @@ npm run lint
 
 ### Deploying
 
-Pushing to `main` deploys the site: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+Pushing to `main` deploys the site: [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml)
 runs the tests, builds the site and publishes it to the `gh-pages` branch. It also runs once a day
 to refresh the GitHub activity graph, and by hand from **Actions → Deploy → Run workflow**.
 
