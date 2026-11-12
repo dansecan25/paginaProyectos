@@ -47,11 +47,10 @@ npm run lint
 ### Deploying
 
 Pushing to `main` deploys the site: [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml)
-runs the tests, builds the site and publishes it to the `gh-pages` branch. It also runs once a day
+runs the tests, builds the site with Node 26 and deploys it to GitHub Pages. It also runs once a day
 to refresh the GitHub activity graph, and by hand from **Actions → Deploy → Run workflow**.
 
-`npm run deploy` still publishes from your machine, but without the activity graph unless the
-variables below are set.
+One-time setup: **Settings → Pages → Build and deployment → Source** must be **GitHub Actions**.
 
 ### GitHub activity graph
 

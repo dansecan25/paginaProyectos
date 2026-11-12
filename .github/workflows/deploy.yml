@@ -1,12 +1,13 @@
-# Builds the site and publishes it to the gh-pages branch, which GitHub Pages serves.
+# Builds the site and deploys it to GitHub Pages.
 #
 # Runs on every push to main, once a day (to refresh the GitHub activity graph on the
 # Links page), and by hand from the Actions tab.
 #
-# Repository secret (Settings → Secrets and variables → Actions):
-#   ACTIVITY_GITHUB_TOKEN  A token that can read your public profile. A fine-grained token
-#                          with "Public repositories (read-only)" access and no other
-#                          permissions is enough. Without it the graph is hidden.
+# One-time setup:
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions".
+#   Settings → Secrets and variables → Actions → ACTIVITY_GITHUB_TOKEN: a fine-grained token
+#     with "Public repositories (read-only)" access and no other permissions. Without it the
+#     graph is hidden.
 name: Deploy
 
 on:
@@ -17,14 +18,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: deploy
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     # The site lives in portfolio/; GitHub only reads workflows from the repository root.
@@ -36,7 +37,7 @@ jobs:
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 24
+          node-version: 26
           cache: npm
           cache-dependency-path: portfolio/package-lock.json
 
@@ -55,12 +56,20 @@ jobs:
       - name: Build
         run: npm run build-only
 
-      - name: Publish to gh-pages
-        # gh-pages can't parse "[bot]" in its -u option, so the author comes from git config.
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          npx gh-pages -d dist -m "Deploy ${GITHUB_SHA::7}" \
-            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: portfolio/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

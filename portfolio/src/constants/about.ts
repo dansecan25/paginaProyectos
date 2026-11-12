@@ -25,7 +25,7 @@ export const ABOUT_STATS: AboutStat[] = [
   { value: '1+ year', label: 'as a software developer at IBM' },
   {
     value: String(EXPECTED_GRADUATION_YEAR),
-    label: 'expected graduation, with a master’s in quantum computing next',
+    label: 'expected graduation from my Computer Engineering licenciatura, then a master’s in Quantum Computing',
   },
 ]
 
@@ -41,7 +41,7 @@ export const ABOUT_SECTIONS: AboutSection[] = [
     title: 'Quantum computing',
     paragraphs: [
       'This is where I’m headed. I’m studying quantum computer architecture, building connections with people who work in the field in other countries so I can learn from first-hand sources, and working to bring a quantum computing workshop to IBM.',
-      `If all goes to plan, I graduate in ${EXPECTED_GRADUATION_YEAR} and continue with a master’s degree in quantum computing.`,
+      `I expect to graduate from my Computer Engineering licenciatura in ${EXPECTED_GRADUATION_YEAR}. After that, I want to pursue a master’s in Quantum Computing.`,
     ],
   },
   {
