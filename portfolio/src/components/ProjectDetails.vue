@@ -16,15 +16,26 @@ defineProps<{ project: Project }>()
       </div>
       <h2 class="details__title">{{ project.title }}</h2>
       <p class="details__summary">{{ project.summary }}</p>
-      <a
-        v-if="project.repoUrl"
-        class="details__repo"
-        :href="project.repoUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View source on GitHub
-      </a>
+      <div v-if="project.releasesUrl || project.repoUrl" class="details__links">
+        <a
+          v-if="project.releasesUrl"
+          class="details__link details__link--download"
+          :href="project.releasesUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download the latest release
+        </a>
+        <a
+          v-if="project.repoUrl"
+          class="details__link"
+          :href="project.repoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View source on GitHub
+        </a>
+      </div>
     </header>
 
     <ProjectMediaGallery :key="project.slug" :slug="project.slug" :media="project.media" />
@@ -105,9 +116,15 @@ defineProps<{ project: Project }>()
   color: var(--color-text-muted);
 }
 
-.details__repo {
-  display: inline-block;
+.details__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 16px;
+}
+
+.details__link {
+  display: inline-block;
   padding: 8px 16px;
   border-radius: var(--radius-sm);
   background: var(--color-text);
@@ -117,9 +134,18 @@ defineProps<{ project: Project }>()
   transition: background-color 0.2s ease;
 }
 
-.details__repo:hover,
-.details__repo:focus-visible {
+.details__link:hover,
+.details__link:focus-visible {
   background: #cccccc;
+}
+
+.details__link--download {
+  background: var(--color-accent);
+}
+
+.details__link--download:hover,
+.details__link--download:focus-visible {
+  background: #85ff66;
 }
 
 /* `section` has a global left margin in main.css; these blocks align to the panel instead. */

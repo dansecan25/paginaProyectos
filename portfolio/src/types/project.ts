@@ -31,4 +31,6 @@ export interface Project {
   sections: ProjectSection[]
   media: ProjectMedia[]
   repoUrl?: string
+  /** Where visitors download the app, e.g. the repository's latest GitHub release. */
+  releasesUrl?: string
 }

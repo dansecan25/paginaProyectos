@@ -172,13 +172,14 @@ export const PROJECTS: Project[] = [
       },
     ],
     repoUrl: 'https://github.com/dansecan25/TerminalOmega',
+    releasesUrl: 'https://github.com/dansecan25/TerminalOmega/releases/latest',
   },
   {
     slug: 'expense-planner',
     title: 'Expense Planner',
     framework: 'React Native',
     language: 'JavaScript',
-    status: 'In development',
+    status: 'Released',
     summary:
       'A personal cash-flow planner. It shows how much money is available before the next payday, records past and future movements, and warns ahead of time when a planned expense would leave an account below zero.',
     highlights: [
@@ -288,31 +289,56 @@ export const PROJECTS: Project[] = [
         caption: 'Settings',
       },
     ],
+    repoUrl: 'https://github.com/dansecan25/ExpensePlannerApp',
+    releasesUrl: 'https://github.com/dansecan25/ExpensePlannerApp/releases/latest',
   },
   {
     slug: 'music-player',
-    title: 'Music Player',
+    title: 'Cumbionsito Player',
     framework: 'Flutter',
     language: 'Dart',
-    status: 'In development',
+    status: 'Released',
     summary:
-      'A cross-platform music player built with Flutter, targeting Android, iOS, desktop and web from one codebase. It is at an early stage: the app shell and theming are in place, and playback features are next.',
+      'A personal, offline music player for Android. Point it at your music folder and every folder inside it becomes a playlist. The library is indexed into an encrypted database, so even large collections open instantly, and the app updates itself from GitHub Releases.',
     highlights: [
-      'One Dart codebase for mobile, desktop and web',
-      'Light and dark themes defined in one place',
-      'Material Design components',
+      'Folder playlists plus your own playlists, sorted by name',
+      'New and deleted songs are picked up on return to the app or with pull-to-refresh',
+      'Background playback with notification controls, shuffle and repeat',
+      'Small thumbnails in lists and full-size artwork on the song page',
+      'Library database encrypted with SQLCipher, key kept in the Android Keystore',
+      'Follows the phone’s light or dark mode, with a choice of theme colors',
+      'The current song’s artwork fills the mini player',
+      'Updates itself from GitHub Releases',
     ],
-    stack: ['Flutter', 'Dart', 'Material Design'],
+    stack: ['Flutter', 'Dart', 'Provider', 'just_audio', 'audio_service', 'SQLCipher', 'Kotlin', 'GitHub Actions'],
     sections: [
       {
-        title: 'Roadmap',
+        title: 'Fast library loading',
         points: [
-          'Browse and play local music files.',
-          'Playlists and a queue.',
-          'Background playback with media controls.',
+          'Songs are indexed into SQLite with their tags and a small compressed thumbnail, so opening a playlist is a single query instead of reading every file.',
+          'A sync lists the folders on a background isolate and only reads tags for new files, so it is cheap enough to run every time the app returns to the foreground.',
+          'Files that disappeared are removed from the library and from user playlists, but only when their folder could be read, so an unmounted card never wipes it.',
+          'Full-size artwork is only loaded on the song page and for the media notification.',
+        ],
+      },
+      {
+        title: 'Privacy',
+        points: [
+          'Everything stays on the phone. The only network request is the update check.',
+          'The database is encrypted with a random 256-bit key generated on first launch and stored in the Android Keystore.',
+        ],
+      },
+      {
+        title: 'Releases and self-update',
+        points: [
+          'Pushing a version tag starts a GitHub Actions workflow that checks the tag against pubspec.yaml, runs the analyzer and tests, builds a signed APK and attaches it to a draft release.',
+          'The signing key only exists as repository secrets, so every release installs over the previous one.',
+          'The app checks the latest published release at startup and on resume, verifies the download against GitHub’s SHA-256 digest, and opens Android’s installer through a small Kotlin channel.',
         ],
       },
     ],
+    repoUrl: 'https://github.com/dansecan25/free_player',
+    releasesUrl: 'https://github.com/dansecan25/free_player/releases/latest',
     media: [],
   },
   {

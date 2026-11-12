@@ -65,7 +65,7 @@ public/images/projects/<slug>/
 | Family Chat Secure | `family-chat-secure` |
 | TerminalOmega | `terminal-omega` |
 | Expense Planner | `expense-planner` |
-| Music Player | `music-player` |
+| Cumbionsito Player | `music-player` |
 | Home Server | `home-server` |
 
 Drop the file in the folder, then list it in that project's `media` array:
