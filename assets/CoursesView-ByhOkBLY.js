@@ -1,0 +1,1 @@
+import{d as e,i as t,m as n,y as r}from"./index-agPUV7Xj.js";var i={},a={class:`relative px-8 py-16 text-center`};function o(t,i){return r(),n(`section`,a,[...i[0]||=[e(`div`,{class:`tempCover`},[e(`h1`,null,`This page is still under construction`)],-1)]])}var s=t(i,[[`render`,o],[`__scopeId`,`data-v-c64d8407`]]);export{s as default};
