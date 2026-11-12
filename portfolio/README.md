@@ -44,12 +44,35 @@ npm run test:unit
 npm run lint
 ```
 
-### To update the webpage
-Push the changes
-Then run 
+### Deploying
+
+Pushing to `main` deploys the site: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+runs the tests, builds the site and publishes it to the `gh-pages` branch. It also runs once a day
+to refresh the GitHub activity graph, and by hand from **Actions → Deploy → Run workflow**.
+
+`npm run deploy` still publishes from your machine, but without the activity graph unless the
+variables below are set.
+
+### GitHub activity graph
+
+The Links page shows the last year of GitHub contributions. The data is fetched during the deploy
+by [`scripts/fetch-github-activity.mjs`](scripts/fetch-github-activity.mjs) into
+`public/data/github-activity.json`, which is generated and not committed. Without it, the page
+simply hides the graph.
+
+One-time setup: create a [fine-grained token](https://github.com/settings/personal-access-tokens/new)
+with **Public repositories (read-only)** access and no other permissions, and save it as the
+`ACTIVITY_GITHUB_TOKEN` repository secret (**Settings → Secrets and variables → Actions**).
+
+To see the graph locally:
+
 ```sh
-npm run deploy
+ACTIVITY_LOGIN=<github-user> ACTIVITY_GITHUB_TOKEN=<token> node scripts/fetch-github-activity.mjs
+npm run dev
 ```
+
+The graph shows the same contributions as your public GitHub profile. To include private work as
+anonymous counts, turn on **Private contributions** in your GitHub profile settings.
 
 ## Project screenshots and videos
 

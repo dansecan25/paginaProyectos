@@ -38,7 +38,12 @@ defineProps<{ project: Project }>()
       </div>
     </header>
 
-    <ProjectMediaGallery :key="project.slug" :slug="project.slug" :media="project.media" />
+    <ProjectMediaGallery
+      v-if="project.media.length"
+      :key="project.slug"
+      :slug="project.slug"
+      :media="project.media"
+    />
 
     <div class="details__columns">
       <section class="details__block">

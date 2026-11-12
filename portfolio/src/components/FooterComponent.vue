@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import LinkedinIcon from '../assets/icons/linkedin-svgrepo.svg';
-import GithubIcon from '../assets/icons/github-142-svgrepo.svg';
-import InstagramIcon from '../assets/icons/instagram-svgrepo.svg';
+import { SOCIAL_LINKS } from '@/constants/links';
+import { SOCIAL_ICONS } from '@/constants/socialIcons';
 </script>
 
 <template>
@@ -21,15 +20,16 @@ import InstagramIcon from '../assets/icons/instagram-svgrepo.svg';
         <p class="links-header">Other links</p>
         <div class="icons-row">
           
-          <!-- GitHub Icon (Order 1) -->
-          <a href="https://github.com/dansecan25" target="_blank" class="icon-link" aria-label="Visit GitHub Profile">
-            <GithubIcon class="social-icon-styles"/>
-          </a>
-          <a href="https://www.linkedin.com/in/dansecan" target="_blank" class="icon-link" aria-label="Visit LinkedIn Profile">
-            <LinkedinIcon class="social-icon-styles"/>
-          </a>
-          <a href="https://www.instagram.com/dansecan25" target="_blank" class="icon-link" aria-label="Visit Instagram Profile">
-            <InstagramIcon class="social-icon-styles"/>
+          <a
+            v-for="link in SOCIAL_LINKS"
+            :key="link.network"
+            :href="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link"
+            :aria-label="`Visit ${link.label} profile`"
+          >
+            <component :is="SOCIAL_ICONS[link.network]" class="social-icon-styles" />
           </a>
           
         </div>

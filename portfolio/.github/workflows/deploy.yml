@@ -1,0 +1,59 @@
+# Builds the site and publishes it to the gh-pages branch, which GitHub Pages serves.
+#
+# Runs on every push to main, once a day (to refresh the GitHub activity graph on the
+# Links page), and by hand from the Actions tab.
+#
+# Repository secret (Settings → Secrets and variables → Actions):
+#   ACTIVITY_GITHUB_TOKEN  A token that can read your public profile. A fine-grained token
+#                          with "Public repositories (read-only)" access and no other
+#                          permissions is enough. Without it the graph is hidden.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test
+        run: npx vitest run
+
+      - name: Fetch GitHub activity
+        env:
+          ACTIVITY_LOGIN: ${{ github.repository_owner }}
+          ACTIVITY_GITHUB_TOKEN: ${{ secrets.ACTIVITY_GITHUB_TOKEN }}
+        run: node scripts/fetch-github-activity.mjs
+
+      - name: Build
+        run: npm run build-only
+
+      - name: Publish to gh-pages
+        run: |
+          npx gh-pages -d dist -m "Deploy ${GITHUB_SHA::7}" \
+            -u "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" \
+            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

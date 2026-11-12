@@ -16,6 +16,15 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --font-heading: raleway, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;
+  /* GitHub activity graph, from empty to the busiest days */
+  --color-activity-0: #142814;
+  /* Solid dark green for tiles that sit over the binary background */
+  --color-surface-accent: #0a140a;
+  --color-activity-1: #0f4d0a;
+  --color-activity-2: #178f07;
+  --color-activity-3: #25c903;
+  --color-activity-4: #33ff00;
 }
 
 /* Simple global reset */

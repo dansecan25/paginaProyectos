@@ -2,8 +2,9 @@
   <nav class="navbar">
     <div class="profile-container">
       <a 
-        href="https://github.com/dansecan25" 
-        target="_blank" 
+        :href="GITHUB_PROFILE_URL"
+        target="_blank"
+        rel="noopener noreferrer"
         class="profile-link-wrapper"
         aria-label="Visit Daniel's GitHub Profile"
       >
@@ -21,7 +22,8 @@
 </template>
 
 <script setup lang="ts">
-// No script logic is needed here for this component's functionality
+import { GITHUB_PROFILE_URL } from '@/constants/links'
+
 </script>
 
 <style scoped>

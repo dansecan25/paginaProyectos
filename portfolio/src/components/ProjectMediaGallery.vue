@@ -18,11 +18,7 @@ const posterUrl = (item: ProjectMedia) => (item.poster ? url(item.poster) : unde
 
 <template>
   <div class="gallery">
-    <div v-if="!active" class="gallery__placeholder">
-      <p>Screenshots and videos coming soon.</p>
-    </div>
-
-    <template v-else>
+    <template v-if="active">
       <figure class="gallery__viewer">
         <video
           v-if="active.type === 'video'"
@@ -74,18 +70,6 @@ const posterUrl = (item: ProjectMedia) => (item.poster ? url(item.poster) : unde
 </template>
 
 <style scoped>
-.gallery__placeholder {
-  display: grid;
-  place-items: center;
-  min-height: 160px;
-  padding: 16px;
-  border: 1px dashed var(--color-card);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  color: var(--color-text-subtle);
-  text-align: center;
-}
-
 .gallery__viewer {
   margin: 0;
   border-radius: var(--radius-md);
