@@ -339,7 +339,44 @@ export const PROJECTS: Project[] = [
     ],
     repoUrl: 'https://github.com/dansecan25/free_player',
     releasesUrl: 'https://github.com/dansecan25/free_player/releases/latest',
-    media: [],
+    media: [
+      {
+        type: 'image',
+        file: 'folder-playlists.webp',
+        alt: 'Folder playlists with their song counts, and the mini player with the current song’s artwork filling it',
+        caption: 'Every folder is a playlist; the mini player shows the song’s artwork',
+      },
+      {
+        type: 'image',
+        file: 'now-playing.webp',
+        alt: 'Now playing page with full-size artwork, seek bar, shuffle, repeat and playback buttons',
+        caption: 'Now playing, with full-size artwork',
+      },
+      {
+        type: 'image',
+        file: 'all-songs.webp',
+        alt: 'All songs with thumbnails, a search box and the sort-order button',
+        caption: 'All songs, searchable and sorted by name',
+      },
+      {
+        type: 'image',
+        file: 'my-playlists.webp',
+        alt: 'My playlists screen with one playlist and a button to create more',
+        caption: 'Your own playlists',
+      },
+      {
+        type: 'image',
+        file: 'menu.webp',
+        alt: 'Side menu with folder playlists, my playlists, all songs and settings',
+        caption: 'Side menu',
+      },
+      {
+        type: 'image',
+        file: 'settings.webp',
+        alt: 'Settings with light and dark appearance, theme colors, the music folder and app updates',
+        caption: 'Appearance, theme colors, music folder and updates',
+      },
+    ],
   },
   {
     slug: 'home-server',
