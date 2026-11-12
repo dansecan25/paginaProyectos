@@ -16,7 +16,7 @@ export const ABOUT_HEADLINE =
   'I build software that holds up, and I’m working my way down to the hardware and toward quantum computers.'
 
 export const ABOUT_INTRO =
-  'I’m a software developer at IBM and a Computer Engineering student at the Instituto Tecnológico de Costa Rica (TEC), where I’m completing a Licenciatura focused on computer architecture and embedded systems: the layer where code meets the hardware that runs it.'
+  'I’m a software developer at IBM and a Computer Engineering student at the Instituto Tecnológico de Costa Rica (TEC), where I’m earning a Licentiate in Computer Engineering (Costa Rica’s engineering degree that goes beyond a bachelor’s), focused on computer architecture and embedded systems: the layer where code meets the hardware that runs it.'
 
 export const EXPECTED_GRADUATION_YEAR = 2030
 
@@ -25,7 +25,8 @@ export const ABOUT_STATS: AboutStat[] = [
   { value: '1+ year', label: 'as a software developer at IBM' },
   {
     value: String(EXPECTED_GRADUATION_YEAR),
-    label: 'expected graduation from my Computer Engineering licenciatura, then a master’s in Quantum Computing',
+    label:
+      'graduating with a Licentiate in Computer Engineering, then on to a master’s in Quantum Computing',
   },
 ]
 
@@ -41,7 +42,7 @@ export const ABOUT_SECTIONS: AboutSection[] = [
     title: 'Quantum computing',
     paragraphs: [
       'This is where I’m headed. I’m studying quantum computer architecture, building connections with people who work in the field in other countries so I can learn from first-hand sources, and working to bring a quantum computing workshop to IBM.',
-      `I expect to graduate from my Computer Engineering licenciatura in ${EXPECTED_GRADUATION_YEAR}. After that, I want to pursue a master’s in Quantum Computing.`,
+      `In ${EXPECTED_GRADUATION_YEAR} I graduate with a Licentiate in Computer Engineering. Next comes a master’s in Quantum Computing, to make this field my specialty.`,
     ],
   },
   {
