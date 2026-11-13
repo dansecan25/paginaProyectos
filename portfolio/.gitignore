@@ -29,7 +29,5 @@ coverage
 
 *.tsbuildinfo
 
-package-lock.json
-
 # Generated during the deploy by scripts/fetch-github-activity.mjs
 /public/data/github-activity.json
