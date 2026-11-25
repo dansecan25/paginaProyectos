@@ -1,4 +1,4 @@
-export type ProjectStatus = 'In development' | 'In use' | 'Released'
+export type ProjectStatus = 'In development' | 'Beta' | 'In use' | 'Released'
 
 export type ProjectMediaType = 'image' | 'video'
 

@@ -175,6 +175,112 @@ export const PROJECTS: Project[] = [
     releasesUrl: 'https://github.com/dansecan25/TerminalOmega/releases/latest',
   },
   {
+    slug: 'github-desktop-enhanced',
+    title: 'GitHub Desktop Linux Enhanced',
+    framework: 'egui',
+    language: 'Rust',
+    status: 'Beta',
+    summary:
+      'A native GitHub Desktop style git client for Linux. It started because the unofficial Linux port of GitHub Desktop shrank its window on every launch until it could not be opened. This rewrite keeps the familiar workflow, and adds line-by-line commits, an in-app conflict editor, pull requests, release tagging and in-app updates.',
+    highlights: [
+      'Commit whole files or single lines, with co-authors, and copy code straight from the diff',
+      'Merge branches with a preview of the commits and conflicts, then resolve conflicts in the app',
+      'Pull requests: list them with their checks, read and join the conversation, create one, check out its branch',
+      'Switch branches with uncommitted changes, leaving them stashed on the branch or bringing them along',
+      'One sync button that publishes, pulls, pushes or fetches, with progress and a Cancel button',
+      'Sign in with the browser, and publish to your account or an organization',
+      'Before and after previews for changed images',
+      'Tag releases with the next version suggested, and update the app from GitHub Releases',
+    ],
+    stack: ['Rust', 'egui / eframe', 'git CLI', 'GitHub REST API', 'System keychain', 'GitHub Actions'],
+    sections: [
+      {
+        title: 'A window that cannot get lost',
+        points: [
+          'The window size is only saved while the window is visible, focused and in a normal state, never while it is minimized, maximized or being restored.',
+          'Every saved size is checked against the minimum and the monitor before it is used, and a corrected value is written back straight away.',
+          'A launch option and an app menu action reset the window size for one start.',
+        ],
+      },
+      {
+        title: 'Credentials without a terminal',
+        points: [
+          'Git runs in the background, so the app is its own askpass helper: git and ssh send their prompts to the running app through a private socket.',
+          'Signing in uses GitHub\'s device flow: a short code entered on github.com, no password and no client secret in the app. The token is kept in the system keychain.',
+          'The token only answers prompts for https://github.com, matched exactly, so look-alike hosts and other servers never receive it. Anything else, such as an SSH passphrase, appears as a dialog.',
+          'The user credential helper and ssh-agent keep working, because git asks them first.',
+        ],
+      },
+      {
+        title: 'Committing lines and resolving conflicts',
+        points: [
+          'Clicking a line number leaves that line out of the commit. The app rebuilds the index with a patch of only the chosen lines, and refuses to commit if the file changed after the lines were picked.',
+          'Conflicted files open in a conflict editor: each conflict takes your side, theirs or both, line endings are kept byte for byte, and the merge finishes with a normal commit.',
+          'Before merging, git computes the result without touching the files, so the dialog can say how many commits come in and which files would conflict.',
+        ],
+      },
+      {
+        title: 'Built to stay responsive and safe',
+        points: [
+          'Every git, network and keychain call runs on a background thread, so the window never freezes, and network operations show git\'s progress and can be cancelled.',
+          'The app runs under a 2 GB memory limit, caps how much git output it reads, and refuses to stash or commit huge build folders missing from .gitignore.',
+          'A watchdog writes a report if the window stops responding, so rare freezes can be traced.',
+          'Diffs lay out only the rows on screen and cut very long lines. Images are decoded in the background and shrunk, so a huge picture can\'t freeze the window.',
+          'The layout collapses to a single column down to a 360 px wide window.',
+        ],
+      },
+      {
+        title: 'Tested end to end',
+        points: [
+          'Integration tests run every git operation against throwaway repositories and local remotes.',
+          'A test starts the real binary as git credential helper and checks that git receives the saved account.',
+          'A headless test drives the real interface and renders each screen, which caught font, theme and layout bugs before release.',
+        ],
+      },
+    ],
+    media: [
+      {
+        type: 'image',
+        file: 'changes.png',
+        alt: 'The Changes view with four changed files on the left and the coloured diff of a Rust file on the right, with the lines chosen for the commit marked in the gutter',
+        caption: 'Choose files or single lines to commit',
+      },
+      {
+        type: 'image',
+        file: 'history.png',
+        alt: 'The History view in the light theme, with release tags on commits and the diff of a file in the selected commit',
+        caption: 'History with release tags',
+      },
+      {
+        type: 'image',
+        file: 'conflict-editor.png',
+        alt: 'The conflict editor showing one conflict in a config file, with your side and theirs, and buttons to use mine, theirs or both',
+        caption: 'Resolve merge conflicts without leaving the app',
+      },
+      {
+        type: 'image',
+        file: 'branch-menu.png',
+        alt: 'The branch list with a right-click menu to view the branch on GitHub, open the repository on GitHub, copy its name or delete it',
+        caption: 'Right-click a branch to open it on GitHub',
+      },
+      {
+        type: 'image',
+        file: 'create-tag.png',
+        alt: 'The Create a tag dialog suggesting the next patch, minor and major versions, with a release message and an option to push the tag',
+        caption: 'Tag a release with the next version suggested',
+      },
+      {
+        type: 'image',
+        file: 'preferences.png',
+        alt: 'Preferences with the theme, code editor choice, GitHub sign-in with the browser or a token, and automatic updates',
+        caption: 'Editor choice, GitHub sign-in and automatic updates',
+      },
+    ],
+    repoUrl: 'https://github.com/dansecan25/GithubDesktopLinuxEnhanced',
+    // A pre-release is never GitHub's "latest" release, so this links to the list.
+    releasesUrl: 'https://github.com/dansecan25/GithubDesktopLinuxEnhanced/releases',
+  },
+  {
     slug: 'expense-planner',
     title: 'Expense Planner',
     framework: 'React Native',
